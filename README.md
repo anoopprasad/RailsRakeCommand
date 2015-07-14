@@ -1,15 +1,22 @@
-### Rails Terminal Commands
+### Rails components
 
-List of rails commands which can be executed from command line interface are
+Main components of Rails are:
 
-    rails console
-    rails server
-    rails generate
-    rails new app_name
+    ActionPack
+    ActiveRecord
+    ActionMailer
+    ActiveModel
+    ActiveResource
+    ActiveSupport
 
-these are the basic commands which we will use in your everyday usage of Rails.
 
-###To explain all the commands in detail lets create a simple Rails application.
+###ActionPack
+
+- Action Pack is a framework for handling and responding to web requests
+- It provides mechanisms for routing (mapping request URLs to actions), defining controllers that implement actions, and generating responses by rendering views
+- In short, Action Pack provides the view and controller layers in the MVC paradigm.
+
+
 
 ### rails new
 
