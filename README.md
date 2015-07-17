@@ -1,40 +1,44 @@
-### Rails components
+adding gems into an application
 
-Main components of Rails are:
+gem 'devise'
+gem 'foundation-rails'
 
-    ActionPack
-    ActiveRecord
-    ActionMailer
-    ActiveModel
-    ActiveResource
-    ActiveSupport
+commands you need to type
 
+bundle 
+rails g foundation:install
+rails g devise:install
+rails g devise user
 
-###ActionPack
+rake db:create
+rake db:migrate
 
-- Action Pack is a framework for handling and responding to web requests
-- It provides mechanisms for routing (mapping request URLs to actions), defining controllers that implement actions, and generating responses by rendering views
-- In short, Action Pack provides the view and controller layers in the MVC paradigm.
+rails g controller user index
 
-
-
-### rails new
-
-Rails new command is used to create a new application in rails. 
-It will create an entire Rails directory structure with all code in MVC pattern.
-
-
-### rails server
-
-The rails server command launches a small web server named WEBrick
-
-Place the screenshot here for rails server
-
-The server can be run on a different port using the -p option
-
-The default development environment can be changed using -e
-
-example rails server -e production -p 4000
+add it in index action home controller 
+before_action :authenticate_user!
 
 
 
+
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name">
+            <h1><%= link_to "Awesome Store", "" %></a></h1>
+          </li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="divider"></li>
+            <li>
+              <% if user_signed_in? %>
+                <%= current_user.email %>
+                
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              <% else %>
+                 <%= link_to "Sign in", new_user_session_path %>
+              <% end %>
+            </li>
+          </ul>
+        </section>
+      </nav>
